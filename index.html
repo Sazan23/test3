@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>test3</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-2">
+        
+      </div>
+      <div class="col-md-auto">
+        <div class="container-fluid box">
+          <h3 class="text-center">Игра "Найди пару"</h3>
+          <div class="row no-gutters">
+            <div class="col"><div class="square" id="0"></div></div>
+            <div class="col"><div class="square" id="1"></div></div>
+            <div class="col"><div class="square" id="2"></div></div>
+            <div class="col"><div class="square" id="3"></div></div>
+          </div>
+          <div class="row no-gutters">
+            <div class="col"><div class="square" id="4"></div></div>
+            <div class="col"><div class="square" id="5"></div></div>
+            <div class="col"><div class="square" id="6"></div></div>
+            <div class="col"><div class="square" id="7"></div></div>
+          </div>
+          <div class="row no-gutters">
+            <div class="col"><div class="square" id="8"></div></div>
+            <div class="col"><div class="square" id="9"></div></div>
+            <div class="col"><div class="square" id="10"></div></div>
+            <div class="col"><div class="square" id="11"></div></div>
+          </div>
+          <div class="row no-gutters">
+            <div class="col"><div class="square" id="12"></div></div>
+            <div class="col"><div class="square" id="13"></div></div>
+            <div class="col"><div class="square" id="14"></div></div>
+            <div class="col"><div class="square" id="15"></div></div>
+          </div>
+          <div class="row m-3">
+            <input class="btn btn-primary" type="button" value="Start">
+          </div>
+          <div class="row">
+            <div class="col" id="timer">0:00.000</div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-2">
+      </div>
+    </div>
+    <div>
+      Правила игры<br>
+      Когда Вы нажимаете на одну из клеток, она окрашивается в определенный цвет. Суть игры - открыть 2 клетки одного цвета. После нажатия на клетку (если цвета у клеток совпали) - цвета никуда не продают, если же вы ошиблись, то оба квадрата окрашиваются обратно в белый.<br>
+      Цель игры - найти всем клеткам пары, тем самым полностью раскрасив игровое поле. После нахождения последней пары таймер останавливается и появляется всплывающее окно с информацией об окончании игры и временем затраченном на неё.
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="js/game.js"></script>
+</body>
+</html>
+
