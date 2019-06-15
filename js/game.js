@@ -8,9 +8,16 @@ let time_spent = '';//таймер в строковом формате
 let t = 0;//общее время от старта в миллисекундах
 let x,//перемешанный массив цветов
     timerId,// числовой идентификатор таймера
-    sec,//секунды
-    min,//минуты
-    ms;//миллисекунды
+    hours , // часы
+    sec = 0,//секунды
+    min = 0,//минуты
+    ms = 0;//миллисекунды
+
+Number.prototype.pad = function(size) {
+    var s = String(this);
+    while (s.length < (size || 2)) {s = "0" + s;}
+    return s;
+}
 
 function init() {
   clearTimeout(timerId);
@@ -26,19 +33,16 @@ function init() {
 }
 
 function timer() {
-  t++; //Увеличивается на 1 раз в миллисекунду
-  ms = t%1000;
-  sec = Math.floor(t/1000);
-  min = Math.floor(t/60000);
- 
-  if (sec >= 60) sec = 0;
-  if (min >= 60) min = 0;
-  if (ms >= 1000) ms = 0;
-  
-  time_spent = min+':'+sec+'.'+ms;
+  t++; //Увеличивается 1 раз в  100 миллисекунд
+  ms =  t %10;
+  sec = Math.floor((t/10) % 60),
+  min = Math.floor((t/10/60) % 60),
+  hours = Math.floor((t/10/60/60) % 24),
+   
+  time_spent = hours+': '+min.pad()+': '+sec.pad()+'. '+ms;
         
   $('#timer').html(time_spent);
-  timerId = setTimeout(timer, 1);
+  timerId = setTimeout(timer, 100);
 }
 
 function shuffle(arr){
